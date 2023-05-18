@@ -38,18 +38,18 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   
 
 const Ddashboard = () => {
-  var [donor,setdonor] = useState([]);
-  useEffect(()=>{
-      axios.get('http://localhost:9999/course/view').then((resp)=>{
-          console.log(resp)
-          setdonor(donor=resp.data)
-      })
-      const deletedonor=(id)=>{
+  // var [donor,setdonor] = useState([]);
+  // useEffect(()=>{
+  //     axios.get('http://localhost:9999/course/view').then((resp)=>{
+  //         console.log(resp)
+  //         setdonor(donor=resp.data)
+  //     })
+  //     const deletedonor=(id)=>{
 
-          axios.post("",id).then(response)
-      }
+  //         axios.post("",id).then(response)
+  //     }
   
-    },[])
+  //   },[])
   return (
   
   <div>  
@@ -70,14 +70,14 @@ const Ddashboard = () => {
         </TableRow>
       </TableHead>
       <TableBody >
-        {blog.map((value,index) => (
+        {/* {blog.map((value,index) => (
           <StyledTableRow key={index}>
             <StyledTableCell align="centre" className='bord'>{value.id}</StyledTableCell>
             <StyledTableCell align="centre" className='bord'>{value.title}</StyledTableCell>
          
             
           </StyledTableRow>
-        ))}
+        ))} */}
       </TableBody>
     </Table>
   </TableContainer>
