@@ -11,8 +11,8 @@ const Donordash = () => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
         <Toolbar>
-          <Typography marginLeft={120} variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Bllaaa
+          <Typography  variant="h6" component="div" sx={{ flexGrow: 1, marginLeft:'50%' }}>
+            Donor
           </Typography>
           <Button color="inherit"><Link to={"/requestform"} className='nog'>Request Form</Link></Button>
           <Button color="inherit"><Link to={"/"} className='nog'>Home</Link></Button>
