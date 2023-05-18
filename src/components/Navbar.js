@@ -12,7 +12,7 @@ const Navbar = () => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1,marginLeft:'50%' }}>
             Blood
           </Typography>
           <Button color="inherit"><Link to={"/login"} className='nog'>Login</Link></Button>

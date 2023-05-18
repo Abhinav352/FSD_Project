@@ -9,7 +9,7 @@ import Ddashboard from './Ddashboard';
 const Donordash = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed">
+      <AppBar position="static">
         <Toolbar>
           <Typography  variant="h6" component="div" sx={{ flexGrow: 1, marginLeft:'50%' }}>
             Donor

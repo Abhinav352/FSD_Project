@@ -14,6 +14,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Request from './Request';
 import Home from './Home';
 import Donordash from './Donordash';
+import axios from "axios";
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -38,18 +39,13 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   
 
 const Ddashboard = () => {
-  // var [donor,setdonor] = useState([]);
-  // useEffect(()=>{
-  //     axios.get('http://localhost:9999/course/view').then((resp)=>{
-  //         console.log(resp)
-  //         setdonor(donor=resp.data)
-  //     })
-  //     const deletedonor=(id)=>{
-
-  //         axios.post("",id).then(response)
-  //     }
-  
-  //   },[])
+  var [donor,setdonor] = useState([]);
+  useEffect(()=>{
+      axios.get('http://localhost:6901/user/view').then((response)=>{
+          console.log(response)
+          setdonor(donor=response.data)
+      })
+    },[])
   return (
   
   <div>  
@@ -61,7 +57,7 @@ const Ddashboard = () => {
           <StyledTableCell align="centre" >Name</StyledTableCell>
           <StyledTableCell align="centre" >Email</StyledTableCell>
           <StyledTableCell align="centre" >Phone Number</StyledTableCell>
-          <StyledTableCell align="centre" >bloodType</StyledTableCell>
+          <StyledTableCell align="centre" >Blood Type</StyledTableCell>
           
 
 
@@ -70,14 +66,18 @@ const Ddashboard = () => {
         </TableRow>
       </TableHead>
       <TableBody >
-        {/* {blog.map((value,index) => (
+        { donor.map((value,index) => (
           <StyledTableRow key={index}>
-            <StyledTableCell align="centre" className='bord'>{value.id}</StyledTableCell>
-            <StyledTableCell align="centre" className='bord'>{value.title}</StyledTableCell>
+            <StyledTableCell align="centre" className='bord'>{value.userName}</StyledTableCell>
+            <StyledTableCell align="centre" className='bord'>{value.userEmail}</StyledTableCell>
+            <StyledTableCell align="centre" className='bord'>{value.userMobile}</StyledTableCell>
+            <StyledTableCell align="centre" className='bord'>{value.userBloodGroup}</StyledTableCell>
+           
+            
          
             
           </StyledTableRow>
-        ))} */}
+        ))}
       </TableBody>
     </Table>
   </TableContainer>

@@ -12,7 +12,7 @@ const Login = () => {
          <h1 className='ll'>Log in</h1>  
         <TextField className='lb' id="oraphyutlined-basic" label="username" variant="outlined" /><br></br>
         <TextField className='sb' id="outlined-basic" label="password" variant="outlined" /><br></br>
-         <Button className='id' variant='text'>forgot password?</Button>
+         <Button className='id' variant='text'>Forgot password?</Button>
         <Button className='tl' variant="contained">Login</Button><br></br>
         </div>
         </div>
