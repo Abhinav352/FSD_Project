@@ -10,6 +10,11 @@ import Paper from '@mui/material/Paper';
 import { Typography } from '@mui/material';
 import { useState, useEffect } from 'react';
 import './Style.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Request from './Request';
+import Home from './Home';
+import Donordash from './Donordash';
+
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -33,7 +38,22 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   
 
 const Ddashboard = () => {
+  var [donor,setdonor] = useState([]);
+  useEffect(()=>{
+      axios.get('http://localhost:9999/course/view').then((resp)=>{
+          console.log(resp)
+          setdonor(donor=resp.data)
+      })
+      const deletedonor=(id)=>{
+
+          axios.post("",id).then(response)
+      }
+  
+    },[])
   return (
+  
+  <div>  
+   <Donordash/>
     <TableContainer component={Paper}>
     <Table sx={{ minWidth: 700 }} aria-label="customized table">
       <TableHead>
@@ -50,17 +70,18 @@ const Ddashboard = () => {
         </TableRow>
       </TableHead>
       <TableBody >
-        {/* {blog.map((value,index) => (
+        {blog.map((value,index) => (
           <StyledTableRow key={index}>
             <StyledTableCell align="centre" className='bord'>{value.id}</StyledTableCell>
             <StyledTableCell align="centre" className='bord'>{value.title}</StyledTableCell>
          
             
           </StyledTableRow>
-        ))} */}
+        ))}
       </TableBody>
     </Table>
   </TableContainer>
+  </div>
   )
 }
 

@@ -2,12 +2,13 @@ import {  Box, Button, Checkbox , Container, CssBaseline, FormControlLabel, Grid
 
 
 import React from 'react'
+import Navbar from './Navbar';
 
 
 const Signup = () => {
   return (
     <div>
-       
+       <Navbar/>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
