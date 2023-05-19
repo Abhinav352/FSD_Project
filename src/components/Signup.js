@@ -3,84 +3,37 @@ import {  Box, Button, Checkbox , Container, CssBaseline, FormControlLabel, Grid
 
 import React from 'react'
 import Navbar from './Navbar';
+import axios from 'axios';
+import { useState,useEffect } from 'react'
+import { useForm } from 'react-hook-form'
 
 
 const Signup = () => {
+  const {register,handleSubmit}= useForm();
+  var [result,setresult] = useState({})
+  const getVal = (val)=>{
+      alert('submitted')
+      axios.post('http://localhost:6901/user/request',val).then((response)=>{
+           setresult(result = response.data);
+      })
+ }
+
   return (
-    <div>
-       <Navbar/>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          
-          <Typography component="h1" variant="h5">
-            Sign Up
-          </Typography>
-          <Box component="form"  noValidate sx={{ mt: 1 }}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-             <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="username"
-              label="Username"
-              name="username"
-              autoComplete="username"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-             <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="age"
-              label="age"
-              type="age"
-              id="age"
-              autoComplete="age"
-            />
-            
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color='error'
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign Up
-            </Button>
-            
-          </Box>
-        </Box>
-        
-       
-      </Container>
-    
+    <div >
+      <Navbar/>
+        <div className='tb'>
+        <div className='tt' border-radius="25px">
+         <h1 className='ll'>SignUp</h1>  
+         <TextField className='sbs' label="Email" variant="outlined" name='userEmail'
+       {...register('userEmail')}/><br></br>
+        <TextField  id="oraphyutlined-basic" label="Username" variant="outlined" name='userName'
+       {...register('userName')}/><br></br>
+        <TextField  id="outlined-basic" label="Password" variant="outlined" name='userPassword'
+       {...register('userPassword')}/><br></br><br></br>
+
+        <Button className='tl' onClick={handleSubmit(getVal)} variant="contained">Sign Up</Button><br></br>
+        </div>
+        </div>
     </div>
   )
 }

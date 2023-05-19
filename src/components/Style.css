@@ -1,8 +1,24 @@
-/* body{
-    background-image: url('https://img.lovepik.com/photo/50032/5642.jpg_wh860.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-  } */
+body {
+	
+  background: rgb(235,25,181);
+  background: linear-gradient(90deg, rgba(235,25,181,1) 2%, rgba(184,21,216,1) 34%, rgba(222,18,111,1) 76%, rgba(241,10,57,1) 97%);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
   .tb
   {
         height: 500px;
@@ -33,13 +49,10 @@
     
   }
   .ll{ 
-    position: fixed;
+   
     top: 10%;
     left: 49%;
-    text-decoration: wavy;
-    font-size: 24px;
     
-  
   }
   .tt
   {
@@ -48,13 +61,38 @@
         left: 40%;
         top: 30%;
         position: relative;
-        background-color:whitesmoke;
-        box-shadow: 0 0.188em 1.550em rgb(156, 156, 156);
+        padding-bottom: 50px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
-        background-image: url('');
+        background: rgba( 255, 255, 255, 0.25 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 4px );
+        -webkit-backdrop-filter: blur( 4px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+  }
+  .tf
+  {
+       
+        width:15cm;
+        left: 35%;
+        margin-top: 50px;
+        margin-bottom: 10px;
+        padding-top: 50px;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 20px;
+        align-items: center;
+        justify-content: space-around;
+        background: rgba( 255, 255, 255, 0.25 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 4px );
+        -webkit-backdrop-filter: blur( 4px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
   }
   
   .id{
@@ -62,6 +100,10 @@
     right: 30px;
     bottom: 40px;
   }
-  .bord{
-    border: double;
+  
+.form{
+  width: 220px;
+}
+h2{
+  margin-left: 47%;
 }
