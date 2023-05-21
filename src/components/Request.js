@@ -1,15 +1,19 @@
 import React from 'react'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
-import { useState } from 'react'
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-import {  Box, Button, Checkbox , Container, CssBaseline, FormControlLabel, Grid, Link, TextField, Typography} from '@mui/material'
+import {  Box, Button, Checkbox , Container, CssBaseline, FormControlLabel, Link, TextField, Typography} from '@mui/material'
 import Donordash from './Donordash';
-
+import CustomDropDown from './Usertype';
+import axios from 'axios';
+import { useState,useEffect } from 'react'
+import { useForm } from 'react-hook-form'
+import {Grid} from '@mui/material'
+import {Paper} from '@mui/material'
 
 const Request = () => {
   
@@ -19,135 +23,100 @@ const [type, setType] = React.useState([]);
 const handleChange = (event) => {
   setType(event.target.value);
 }
-
+const {register,handleSubmit}= useForm();
+  var [result,setresult] = useState({})
+  const getVal = (val)=>{
+      alert('submitted')
+      axios.post('http://localhost:6901/user/request',val).then((response)=>{
+           setresult(result = response.data);
+      })
+ }
+ const paperStyle={padding:20,height:'85vh',width:420,margin:"20p"}
   return (
     
     <div>
       <Donordash/>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          
-          <Typography component="h1" variant="h5">
-            Request Form
-          </Typography>
-          <Box component="form"  noValidate sx={{ mt: 1 }}>
-
-          <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="Name"
-              label="Name"
-              name="Name"
-              autoComplete="Name"
-           
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="age"
-              label="age"
-              type="age"
-              id="age"
-              autoComplete="age"
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              
-            />
-             <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="Phno"
-              label="Phone Number"
-              name="Phno"
-              
-              />
-               {/* <PhoneInput
-      placeholder=" phone number"
-      value={value}
-      onChange={setValue}/>   */}
-             
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="Blood Type"
-              label="Blood Type"
-              id="bloodType"
-           
-            />
-            <FormControl fullWidth>
-  <InputLabel id="userType">User Type</InputLabel>
+      <Grid className='App'>
+          <Paper elevation={15} style={paperStyle} className='col'>
+      
+     
+        <div className='tb'>
+        <h2 className='lr'>REQUEST FORM</h2>  
+        
+         
+         <TextField className='sbs' label="Name" variant="outlined" name='userName'
+       {...register('userName')}/><br></br><br></br>
+        <TextField  id="oraphyutlined-basic" label="Age" variant="outlined" name='userAge'
+       {...register('userAge')}/><br></br><br></br>
+        <TextField  id="outlined-basic" label="Email" variant="outlined" name='userEmail'
+       {...register('userEmail')} /><br></br><br></br>
+        <TextField  id="outlined-basic" label="Blood Type" variant="outlined"name='userBloodGroup'
+       {...register('userBloodGroup')} /><br></br><br></br>
+        <FormControl className='form'>
+           <InputLabel id="userType" >User Type</InputLabel>
   <Select
     id="userType"
     label="User"
     value={type}
     onChange={handleChange}
     required
+   
   >
-    <MenuItem value={2} >Donor</MenuItem>
-    <MenuItem value={3}>Reciever</MenuItem>
+    <MenuItem value={2}  name='userType'
+       {...register('userType')} >Donor</MenuItem>
+    <MenuItem value={3}  name='userType'
+       {...register('userType')}>Reciever</MenuItem>
   </Select>
-</FormControl>
+  </FormControl><br></br>
 
-<div>
  
     <TextField
-    Numbers
+     Numbers
      margin="normal"
-   
-     fullWidth
-     name="Predefined Ailment"
+     
+     name='userAilments'
+       {...register('userAilments')}
      label="Predefined Ailment"
      id="Ailment"
   
-   />
+   /><br></br>
   
     
-     </div>
+ 
      <TextField
      margin="normal"
-     fullWidth
-     name="No of units"
+     
+     name='userAmount'
+       {...register('userAmount')}
      label="No of units"
      id="units"
      />
 
-
+<br></br>
             
             
-            <Button
+        <Button
               type="submit"
-              fullWidth
+              
               variant="contained"
               color='error'
-              sx={{ mt: 3, mb: 2 }}
-            >
+              sx={{ mt: 3, mb: 10 }}
+              onClick={handleSubmit(getVal)}>
               Submit
             </Button>
             
-          </Box>
-        </Box>
+
+        
+        </div>
+        
+   
+    </Paper>
+    </Grid>
+          
+        
         
        
-      </Container>
+      
     
     </div>
     

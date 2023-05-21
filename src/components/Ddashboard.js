@@ -14,73 +14,51 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Request from './Request';
 import Home from './Home';
 import Donordash from './Donordash';
+import axios from "axios";
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import {Grid} from '@mui/material'
+import { CardActionArea } from '@mui/material';
 
 
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-    [`&.${tableCellClasses.head}`]: {
-      backgroundColor: theme.palette.common.black,
-      color: theme.palette.common.white,
-    },
-    [`&.${tableCellClasses.body}`]: {
-      fontSize: 14,
-    },
-  }));
-  
-  const StyledTableRow = styled(TableRow)(({ theme }) => ({
-    '&:nth-of-type(odd)': {
-      backgroundColor: theme.palette.action.hover,
-    },
-    // hide last border
-    '&:last-child td, &:last-child th': {
-      border: 0,
-    },
-  }));
+
   
 
 const Ddashboard = () => {
-  // var [donor,setdonor] = useState([]);
-  // useEffect(()=>{
-  //     axios.get('http://localhost:9999/course/view').then((resp)=>{
-  //         console.log(resp)
-  //         setdonor(donor=resp.data)
-  //     })
-  //     const deletedonor=(id)=>{
-
-  //         axios.post("",id).then(response)
-  //     }
-  
-  //   },[])
+  var [donor,setdonor] = useState([]);
+  useEffect(()=>{
+      axios.get('http://localhost:6901/user/view').then((response)=>{
+          console.log(response)
+          setdonor(donor=response.data)
+      })
+    },[])
   return (
   
   <div>  
-   <Donordash/>
-    <TableContainer component={Paper}>
-    <Table sx={{ minWidth: 700 }} aria-label="customized table">
-      <TableHead>
-        <TableRow className='bord'>
-          <StyledTableCell align="centre" >Name</StyledTableCell>
-          <StyledTableCell align="centre" >Email</StyledTableCell>
-          <StyledTableCell align="centre" >Phone Number</StyledTableCell>
-          <StyledTableCell align="centre" >bloodType</StyledTableCell>
-          
+   <Donordash/><br></br><br></br>
+   <Grid container spacing={2}>
+        {donor.map((data,ind)=>{
+            return(
+                <Grid xs={3}>
+ <Card sx={{ maxWidth: 345 }} key={ind} className='card'>
 
 
-         
-          
-        </TableRow>
-      </TableHead>
-      <TableBody >
-        {/* {blog.map((value,index) => (
-          <StyledTableRow key={index}>
-            <StyledTableCell align="centre" className='bord'>{value.id}</StyledTableCell>
-            <StyledTableCell align="centre" className='bord'>{value.title}</StyledTableCell>
-         
-            
-          </StyledTableRow>
-        ))} */}
-      </TableBody>
-    </Table>
-  </TableContainer>
+
+      <CardContent >
+        <div>Name : {data.userName}</div>
+        <div>Email : {data.userEmail}</div>
+        <div>Phone : {data.userMobile}</div>
+        <div>Blood Type: {data.userBloodGroup}</div>
+
+
+      </CardContent>
+
+
+    </Card>
+    </Grid>
+    )})}</Grid>
+
   </div>
   )
 }

@@ -1,12 +1,24 @@
-/* body{
-    background-image: url('https://img.lovepik.com/photo/50032/5642.jpg_wh860.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-  } */
+body{
+  background-image: url("images/wallpaperflare.com_wallpaper.jpg");
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
   .tb
   {
-        height: 500px;
+       
         width: 100%;
+        margin-bottom: 100px;
   
       
   }
@@ -26,35 +38,57 @@
   }
   .tl 
   {
-    position: fixed;
+    /* position: fixed;
     top: 0%;
     left: 0%;
-    
-    
+     */
+      width: 100px;
+     
+       
+        top: 30%;
+        position: absolute;
   }
   .ll{ 
-    position: fixed;
+   
     top: 10%;
     left: 49%;
-    text-decoration: wavy;
-    font-size: 24px;
-    
   
+    
   }
   .tt
   {
-        height: 10cm;
+        /* height: 10cm;
         width:10cm;
         left: 40%;
         top: 30%;
-        position: relative;
-        background-color:whitesmoke;
-        box-shadow: 0 0.188em 1.550em rgb(156, 156, 156);
+        position: absolute;
+        padding-bottom: 50px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-around; */
+        
+  }
+  .tf
+  {
+       
+        /* width:15cm;
+        left: 35%;
+        margin-top: 50px;
+       
+        padding-top: 50px;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 20px;
+        align-items: center;
         justify-content: space-around;
-        background-image: url('');
+        background: rgba( 255, 255, 255, 0.25 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 4px );
+        -webkit-backdrop-filter: blur( 4px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 ); */
   }
   
   .id{
@@ -62,6 +96,29 @@
     right: 30px;
     bottom: 40px;
   }
-  .bord{
-    border: double;
+  
+.form{
+  width: 220px;
+}
+h2{
+  
+}
+.textfield{
+  background-color: aliceblue;
+}
+.typo{
+  color: white;
+}
+.App{
+        height: 10cm;
+        width:10cm;
+        left: 40%;
+        top: 30%;
+        position: absolute;
+       
+       
+}
+.card{
+  margin-top: 20px;
+  margin-left: 20px;
 }
