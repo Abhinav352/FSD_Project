@@ -12,8 +12,7 @@ const Donordash = () => {
     boxShadow: '1px 2px 9px #000',
    // background: 'rgb(63,94,251)',
    //background: 'linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)'
-   background:'#fff',
-   opacity:'0.3'
+   background:'#fff'
   };
   return (
     <Box sx={{ flexGrow: 1 }}>

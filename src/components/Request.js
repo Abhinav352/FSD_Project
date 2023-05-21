@@ -6,13 +6,14 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-import {  Box, Button, Checkbox , Container, CssBaseline, FormControlLabel, Grid, Link, TextField, Typography} from '@mui/material'
+import {  Box, Button, Checkbox , Container, CssBaseline, FormControlLabel, Link, TextField, Typography} from '@mui/material'
 import Donordash from './Donordash';
 import CustomDropDown from './Usertype';
 import axios from 'axios';
 import { useState,useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-
+import {Grid} from '@mui/material'
+import {Paper} from '@mui/material'
 
 const Request = () => {
   
@@ -30,25 +31,27 @@ const {register,handleSubmit}= useForm();
            setresult(result = response.data);
       })
  }
+ const paperStyle={padding:20,height:'85vh',width:420,margin:"20p"}
   return (
     
     <div>
       <Donordash/>
-       
-      <div >
+      <Grid className='App'>
+          <Paper elevation={15} style={paperStyle} className='col'>
+      
      
         <div className='tb'>
-        <h2 className='ll'>REQUEST FORM</h2>  
-        <div className='tf' >
+        <h2 className='lr'>REQUEST FORM</h2>  
+        
          
          <TextField className='sbs' label="Name" variant="outlined" name='userName'
-       {...register('userName')}/><br></br>
+       {...register('userName')}/><br></br><br></br>
         <TextField  id="oraphyutlined-basic" label="Age" variant="outlined" name='userAge'
-       {...register('userAge')}/><br></br>
+       {...register('userAge')}/><br></br><br></br>
         <TextField  id="outlined-basic" label="Email" variant="outlined" name='userEmail'
-       {...register('userEmail')} /><br></br>
+       {...register('userEmail')} /><br></br><br></br>
         <TextField  id="outlined-basic" label="Blood Type" variant="outlined"name='userBloodGroup'
-       {...register('userBloodGroup')} /><br></br>
+       {...register('userBloodGroup')} /><br></br><br></br>
         <FormControl className='form'>
            <InputLabel id="userType" >User Type</InputLabel>
   <Select
@@ -64,7 +67,7 @@ const {register,handleSubmit}= useForm();
     <MenuItem value={3}  name='userType'
        {...register('userType')}>Reciever</MenuItem>
   </Select>
-  </FormControl>
+  </FormControl><br></br>
 
  
     <TextField
@@ -76,7 +79,7 @@ const {register,handleSubmit}= useForm();
      label="Predefined Ailment"
      id="Ailment"
   
-   />
+   /><br></br>
   
     
  
@@ -89,7 +92,7 @@ const {register,handleSubmit}= useForm();
      id="units"
      />
 
-
+<br></br>
             
             
         <Button
@@ -97,7 +100,7 @@ const {register,handleSubmit}= useForm();
               
               variant="contained"
               color='error'
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 10 }}
               onClick={handleSubmit(getVal)}>
               Submit
             </Button>
@@ -105,9 +108,10 @@ const {register,handleSubmit}= useForm();
 
         
         </div>
-        </div>
-    </div>
-  
+        
+   
+    </Paper>
+    </Grid>
           
         
         
