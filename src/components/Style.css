@@ -1,5 +1,8 @@
 body{
-  background-image: url("images/wallpaperflare.com_wallpaper.jpg");
+  background-image: url("images/IMG_20230521_094811.jpg");
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 @keyframes gradient {
@@ -121,4 +124,6 @@ h2{
 .card{
   margin-top: 20px;
   margin-left: 20px;
+  background-color: rgb(16,35,196);
+  background: linear-gradient(90deg, rgba(16,35,196,1) 0%, rgba(103,122,29,1) 100%);;
 }
