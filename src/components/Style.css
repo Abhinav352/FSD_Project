@@ -125,4 +125,6 @@ h2{
 .card{
   margin-top: 20px;
   margin-left: 20px;
+  background-color: rgb(16,35,196);
+  background: linear-gradient(90deg, rgba(16,35,196,1) 0%, rgba(103,122,29,1) 100%);;
 }
