@@ -51,8 +51,8 @@ const Login = () => {
         <div className='tb'>
         <div className='tt' >
          <h1 className='ll'>LOGIN</h1>  
-        <TextField  className='textfield' label="Username" variant="filled" name='userName'
-       {...register('userName')}/><br></br><br></br>
+        <TextField  className='textfield' label="Email" variant="filled" name='userEmail'
+       {...register('userEmail')}/><br></br><br></br>
         <TextField className='textfield' id="outlined-basic" label="Password" variant="filled" name='userPassword'
        {...register('userPassword')} /><br></br><br></br><br></br><br></br>
          <Button className='id' variant='text'>Forgot password?</Button><br></br>
