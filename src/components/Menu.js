@@ -44,10 +44,14 @@ function NewMenu() {
         
       >
         <MenuItem onClick={handleClose} ><Link to={"/"} className='nog' style={{textDecoration: 'none'}}>Home</Link></MenuItem>
-        <MenuItem onClick={handleClose}><Link to={"/login"} className='nog' style={{textDecoration: 'none'}}>Login</Link></MenuItem>
-        <MenuItem onClick={handleClose}><Link to={"/signup"} className='nog' style={{textDecoration: 'none'}}>SignUp</Link></MenuItem>
         <MenuItem onClick={handleClose}><Link to={"/ddashboard"} className='nog' style={{textDecoration: 'none'}}>Donors</Link></MenuItem>
         <MenuItem onClick={handleClose}><Link to={"/requestform"} className='nog' style={{textDecoration: 'none'}}>Request Form</Link></MenuItem>
+        <MenuItem onClick={()=>{
+            localStorage.removeItem("authenticated")
+            localStorage.removeItem("token")
+           
+        }} ><Link to={"/"} className='nog' style={{textDecoration: 'none'}}>Logout</Link></MenuItem>
+       
       </Menu>
     </div>
   );

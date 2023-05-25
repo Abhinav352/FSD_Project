@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 import Login from './components/Login';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
+import Update from './components/Update';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Route path='/adashboard'element={<Adashboard/>}></Route>
       <Route path='/requestform'element={<Request/>}></Route>
       <Route path='/logout'element={<Logoutbar />}></Route>
+      <Route path='/update'element={<Update />}></Route>
       <Route path='/'element={<Home/>}></Route>
       
     </Routes>

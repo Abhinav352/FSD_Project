@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Ddashboard from './Ddashboard';
 import './Style.css';
 import NewMenu from './Menu';
@@ -17,21 +17,31 @@ const Navbar = () => {
    background:'#fff'
   };
 const isAdmin=localStorage.getItem("isAdmin")
+const navigate = useNavigate()
 if(isAdmin)
 {
+  
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" className='navbar' style={nav} >
         <Toolbar>
-          <NewMenu />
+        
           <Typography variant="h6" className='typo' component="div" sx={{ flexGrow: 1,marginLeft:'45%' }}>
           <Link to={"/"} className='nog' style={{textDecoration: 'none'}} sx={{color:'#eeeee4'}}>Blood</Link>
           </Typography>
           <Button color="inherit" ><Link to={"/login"} className='nog' style={{textDecoration: 'none'}} >Login</Link></Button>
           <Button color="inherit"><Link to={"/signup"} className='nog' style={{textDecoration: 'none'}}>SignUp</Link></Button>
-          <Button color="inherit"><Link to={"/ddashboard"} className='nog' style={{textDecoration: 'none'}}>Donors</Link></Button>
+          {/* <Button color="inherit"><Link to={"/ddashboard"} className='nog' style={{textDecoration: 'none'}}>Donors</Link></Button>
           <Button color="inherit"><Link to={"/adashboard"} className='nog' style={{textDecoration: 'none'}}>Admin</Link></Button>
-          <Button color="inherit"><Link to={"/logout"} className='nog' style={{textDecoration: 'none'}}>Logout</Link></Button>
+          <Button  color="inherit" onClick={()=>{
+            localStorage.removeItem("authenticated")
+            localStorage.removeItem("token")
+           
+        }}
+        
+         >
+            <Link to={"/"} className='nog' style={{textDecoration: 'none'}}>Logout</Link>
+        </Button> */}
 
         </Toolbar>
       </AppBar>
@@ -40,6 +50,7 @@ if(isAdmin)
 }
 
 else{
+  
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" className='navbar' style={nav} >
@@ -51,7 +62,14 @@ else{
           <Button color="inherit" ><Link to={"/login"} className='nog' style={{textDecoration: 'none'}} >Login</Link></Button>
           <Button color="inherit"><Link to={"/signup"} className='nog' style={{textDecoration: 'none'}}>SignUp</Link></Button>
           <Button color="inherit"><Link to={"/ddashboard"} className='nog' style={{textDecoration: 'none'}}>Donors</Link></Button>
+          <Button  color="inherit" onClick={()=>{
+            localStorage.removeItem("authenticated")
+            localStorage.removeItem("token")
+           
+        }}>
+          <Link to={"/"} className='nog' style={{textDecoration: 'none'}}>Logout</Link>
           
+        </Button>
          
 
         </Toolbar>

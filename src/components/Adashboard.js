@@ -10,11 +10,12 @@ import Paper from '@mui/material/Paper';
 import { Button, Typography } from '@mui/material';
 import { useState, useEffect } from 'react';
 import './Style.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import Request from './Request';
 import Home from './Home';
 import Donordash from './Donordash';
 import axios from "axios";
+import Adash from './Adash';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -51,14 +52,10 @@ useEffect(()=>{
     axios.post('http://localhost:6901/admin/delete',data)
   }
 
-  const updateDonor = ()=>{
-   
-    <Request />
-  }
 return (
 
 <div>  
- <Donordash/>
+ <Adash />
   <TableContainer component={Paper}>
   <Table sx={{ minWidth: 700 }} aria-label="customized table">
     <TableHead>
@@ -81,7 +78,7 @@ return (
           <StyledTableCell align="centre" className='bord'>{value.userEmail}</StyledTableCell>
           <StyledTableCell align="centre" className='bord'>{value.userMobile}</StyledTableCell>
           <StyledTableCell align="centre" className='bord'>{value.userBloodGroup}</StyledTableCell>
-          <StyledTableCell align="centre" className='bord'><Button variant='contained' onClick={()=>{updateDonor()}}>Update</Button></StyledTableCell>
+          <StyledTableCell align="centre" className='bord'><Button variant='contained'><Link to={"/update"}  style={{textDecoration: 'none'}}>Update</Link></Button></StyledTableCell>
           <StyledTableCell align="centre" className='bord'><Button variant='contained' onClick={()=>{deletDonor(value._id)}}>Delete</Button></StyledTableCell>
           
        

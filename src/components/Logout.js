@@ -21,17 +21,13 @@ export default function Logoutbar() {
           >
          <BloodtypeIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Blood Bank Management System
-          </Typography>
           <Button onClick={()=>{
             localStorage.removeItem("authenticated")
             localStorage.removeItem("token")
             navigate('/')
         }}
         variant="contained"
-        color='warning'
-        sx={{ bgcolor: '#b71c1c' }} >
+         >
             Logout
         </Button>
         </Toolbar>
