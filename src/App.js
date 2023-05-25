@@ -1,5 +1,5 @@
 import './App.css';
-
+import Logoutbar from './components/Logout';
 import Signup from './components/Signup';
 import Request from './components/Request';
 import Adashboard from './components/Adashboard';
@@ -21,6 +21,7 @@ function App() {
       <Route path='/ddashboard'element={<Ddashboard/>}></Route>
       <Route path='/adashboard'element={<Adashboard/>}></Route>
       <Route path='/requestform'element={<Request/>}></Route>
+      <Route path='/logout'element={<Logoutbar />}></Route>
       <Route path='/'element={<Home/>}></Route>
       
     </Routes>

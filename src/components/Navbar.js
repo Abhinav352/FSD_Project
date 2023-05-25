@@ -29,7 +29,7 @@ const Navbar = () => {
           <Button color="inherit"><Link to={"/signup"} className='nog' style={{textDecoration: 'none'}}>SignUp</Link></Button>
           <Button color="inherit"><Link to={"/ddashboard"} className='nog' style={{textDecoration: 'none'}}>Donors</Link></Button>
           <Button color="inherit"><Link to={"/adashboard"} className='nog' style={{textDecoration: 'none'}}>Admin</Link></Button>
-         
+          <Button color="inherit"><Link to={"/logout"} className='nog' style={{textDecoration: 'none'}}>Logout</Link></Button>
 
         </Toolbar>
       </AppBar>
