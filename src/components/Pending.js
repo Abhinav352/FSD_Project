@@ -52,15 +52,19 @@ useEffect(()=>{
     const data ={_id : id};
     axios.post('http://localhost:6901/admin/pending/delete',data)
   }
-  var [add,setadd] = useState({});
-  const approveDonor = (val)=>{
-    alert('approved')
-    axios.post('http://localhost:6901/admin/approve',val).then((response)=>{ 
-    console.log(response)
-   setadd(add = response.data);
+  
+  const acceptrequest=(value)=>{
+    axios.post('http://localhost:6901/admin/approve',value).then((response)=>{
+        console.log(response.data);
   })
-    }
-    
+  axios.post('http://localhost:6901/admin/pending/delete',value).then((response)=>{
+    const newvalue=donor.filter((v)=>{return v._id !== value._id})
+    setdonor(newvalue);
+})
+
+}
+
+
   
   
 return (
@@ -89,7 +93,7 @@ return (
           <StyledTableCell align="centre" className='bord'>{value.userEmail}</StyledTableCell>
           <StyledTableCell align="centre" className='bord'>{value.userMobile}</StyledTableCell>
           <StyledTableCell align="centre" className='bord'>{value.userBloodGroup}</StyledTableCell>
-          <StyledTableCell align="centre" className='bord'><Button variant='contained' onClick={()=>{approveDonor(value.data)}}>Approve</Button></StyledTableCell>
+          <StyledTableCell align="centre" className='bord'><Button variant='contained' onClick={()=>{acceptrequest(value)}}>Approve</Button></StyledTableCell>
           <StyledTableCell align="centre" className='bord'><Button variant='contained' onClick={()=>{deletDonor(value._id)}}>Decline</Button></StyledTableCell>
           
        
