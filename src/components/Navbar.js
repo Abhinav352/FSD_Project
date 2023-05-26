@@ -19,6 +19,7 @@ const Navbar = () => {
 const isAdmin=localStorage.getItem("isAdmin")
 const authenticated=localStorage.getItem("authenticated")
 const navigate = useNavigate()
+console.log(isAdmin);
 if(!authenticated)
 {
   
@@ -26,9 +27,17 @@ if(!authenticated)
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" className='navbar' style={nav} >
         <Toolbar>
-        
-          <Typography variant="h6" className='typo' component="div" sx={{ flexGrow: 1,marginLeft:'45%' }}>
-          <Link to={"/"} className='nog' style={{textDecoration: 'none'}} sx={{color:'#eeeee4'}}>Blood</Link>
+        {/* <IconButton className='sty1'
+            size="large" 
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+         
+          </IconButton> */}
+          <Typography variant="h6" className='typo' component="div" sx={{ flexGrow: 1 }}>
+          <Link to={"/"} className='pog' style={{textDecoration: 'none'}} sx={{color:'#eeeee4'}}>Home</Link>
           </Typography>
           <Button color="inherit" ><Link to={"/login"} className='nog' style={{textDecoration: 'none'}} >Login</Link></Button>
           <Button color="inherit"><Link to={"/signup"} className='nog' style={{textDecoration: 'none'}}>SignUp</Link></Button>

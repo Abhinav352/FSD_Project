@@ -25,14 +25,27 @@ const Signup = () => {
       navigate("/Signup")
     })
   }
-  const paperStyle={padding:20,height:'50vh',width:290,margin:"20p"}
+  const paperStyle={padding:50,height:'86vh',width:290,margin:"120p"}
   return (
-    <div >
+    <div style={{backgroundColor:'#000'}} >
       <Navbar/>
+      <br></br>
+    <br></br>
+   
       <Grid className='App'>
           <Paper elevation={15} style={paperStyle} className='col'>
+
         <div className='tb'>
-        <div className='tt' border-radius="25px">
+        <br></br>
+       <br></br>
+       <br></br>
+       <br></br>
+       <br></br>
+       <br></br>
+       <br></br>
+       <br></br>
+       <br></br>
+       <br></br>
          <h1 className='ll'>SignUp</h1>  
          <TextField  className='textfield' label="Email" variant="filled" name='userEmail'
        {...register('userEmail')}/><br></br><br></br>
@@ -43,7 +56,7 @@ const Signup = () => {
 
         <Button className='tl' onClick={handleSubmit(handleSignup)} variant="contained">Sign Up</Button><br></br>
         </div>
-        </div>
+        
         </Paper>
         </Grid>
     </div>

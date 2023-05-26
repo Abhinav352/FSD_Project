@@ -1,4 +1,4 @@
-import { Button, TextField, Typography } from '@mui/material'
+import { Box, Button, TextField, Typography } from '@mui/material'
 import React from 'react'
 import './Style.css'
 import { blue } from '@mui/material/colors'
@@ -10,6 +10,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from "react-router-dom";
 import {Grid} from '@mui/material'
 import {Paper} from '@mui/material'
+import background from './images/background.jpg'
 const Login = () => {
   const {register, handleSubmit} = useForm()
   const navigate = useNavigate()
@@ -40,16 +41,37 @@ const Login = () => {
       navigate("/login")
     })
   }
-  const paperStyle={padding:20,height:'50vh',width:290,margin:"20p"}
+  const paperStyle={padding:50,height:'86vh',width:290,margin:"120p"}
  if(!authenticated){ 
   
   return (
+    
     <div >
-      <Navbar/>
-      <Grid className='App'>
+      
+    <Navbar/>
+     
+      
+    <br></br>
+    <br></br>
+   
+    
+   
+    
+
+      <Grid className='App' >
           <Paper elevation={15} style={paperStyle} className='col'>
         <div className='tb'>
-        <div className='tt' >
+       <br></br>
+       <br></br>
+       <br></br>
+       <br></br>
+       <br></br>
+       <br></br>
+       <br></br>
+       <br></br>
+       <br></br>
+       <br></br>
+
          <h1 className='ll'>LOGIN</h1>  
         <TextField  className='textfield' label="Email" variant="filled" name='userEmail'
        {...register('userEmail')}/><br></br><br></br>
@@ -58,10 +80,13 @@ const Login = () => {
          <Button className='id' variant='text'>Forgot password?</Button><br></br>
         <Button className='tl'onClick={handleSubmit(handleLogin)} variant="contained">Login</Button><br></br>
         </div>
-        </div>
+       
         </Paper>
         </Grid>
-    </div>
+        
+        </div>
+       
+  
   )}
 }
 
