@@ -1,4 +1,4 @@
-import { Button, TextField, Typography } from '@mui/material'
+import { Box, Button, TextField, Typography } from '@mui/material'
 import React from 'react'
 import './Style.css'
 import { blue } from '@mui/material/colors'
@@ -10,6 +10,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from "react-router-dom";
 import {Grid} from '@mui/material'
 import {Paper} from '@mui/material'
+import background from './images/background.jpg'
 const Login = () => {
   const {register, handleSubmit} = useForm()
   const navigate = useNavigate()
@@ -40,13 +41,17 @@ const Login = () => {
       navigate("/login")
     })
   }
-  const paperStyle={padding:20,height:'50vh',width:290,margin:"20p"}
+  const paperStyle={padding:20,height:'50vh',width:290,margin:"1p"}
  if(!authenticated){ 
   
   return (
+    <body >
     <div >
-      <Navbar/>
-      <Grid className='App'>
+    <Navbar/>
+      <Box sx={{color:'#eeeee4'}}>
+      
+    
+      <Grid className='App' >
           <Paper elevation={15} style={paperStyle} className='col'>
         <div className='tb'>
         <div className='tt' >
@@ -61,7 +66,10 @@ const Login = () => {
         </div>
         </Paper>
         </Grid>
-    </div>
+        </Box>
+        </div>
+        </body>
+  
   )}
 }
 

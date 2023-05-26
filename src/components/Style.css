@@ -119,6 +119,7 @@ h2{
         left: 40%;
         top: 30%;
         position: absolute;
+        
        
        
 }
@@ -128,4 +129,21 @@ h2{
   background-color: rgb(16,35,196);
   background: linear-gradient(90deg, rgba(16,35,196,1) 0%, rgba(103,122,29,1) 100%);;
 }
-
+.loginBackground{
+  /* background-image:url(/src/components/images/background.jpg);
+  background-repeat: no-repeat;
+  */
+  background-color: white;
+  background-image: url('/src/components/images/White_full.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+body{
+  background-image: url('/src/components/images/save_blood.png');
+ 
+  background-size: cover;
+ 
+  
+  
+}

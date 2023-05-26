@@ -27,7 +27,7 @@ const Signup = () => {
   }
   const paperStyle={padding:20,height:'50vh',width:290,margin:"20p"}
   return (
-    <div >
+    <div style={{backgroundColor:'#000'}} >
       <Navbar/>
       <Grid className='App'>
           <Paper elevation={15} style={paperStyle} className='col'>
