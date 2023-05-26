@@ -9,6 +9,7 @@ import Login from './components/Login';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 import Update from './components/Update';
+import Pending from './components/Pending';
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
       <Route path='/adashboard'element={<Adashboard/>}></Route>
       <Route path='/requestform'element={<Request/>}></Route>
       <Route path='/logout'element={<Logoutbar />}></Route>
-      <Route path='/update'element={<Update />}></Route>
+      <Route path='/Update'element={<Update />}></Route>
+      <Route path='/pending'element={<Pending />}></Route>
       <Route path='/'element={<Home/>}></Route>
       
     </Routes>

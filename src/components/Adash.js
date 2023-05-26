@@ -23,6 +23,7 @@ const Adash = () => {
           <Link to={"/adashboard"} className='nog' style={{textDecoration: 'none'}}>Admin</Link>
           </Typography>
           <Button color="inherit"><Link to={"/requestform"} className='nog' style={{textDecoration: 'none'}}>Add</Link></Button>
+          <Button color="inherit"><Link to={"/pending"} className='nog' style={{textDecoration: 'none'}}>Pending</Link></Button>
           <Button color="inherit"><Link to={"/"} className='nog' style={{textDecoration: 'none'}}>Home</Link></Button>
            
         </Toolbar>
