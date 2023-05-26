@@ -46,10 +46,10 @@ const Ddashboard = () => {
 
 
       <CardContent >
-        <div>Name : {data.userName}</div>
-        <div>Email : {data.userEmail}</div>
-        <div>Phone : {data.userMobile}</div>
-        <div>Blood Type: {data.userBloodGroup}</div>
+        <div><h4>Name : {data.userName}</h4></div>
+        <div><h4>Email : {data.userEmail}</h4></div>
+        <div><h4>Phone : {data.userMobile}</h4></div>
+        <div><h4>Blood Type: {data.userBloodGroup}</h4></div>
 
 
       </CardContent>

@@ -3,6 +3,8 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
+import MenuIcon from '@mui/icons-material/Menu';
+import BloodtypeIcon from '@mui/icons-material/Bloodtype';
 
 function NewMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -25,7 +27,7 @@ function NewMenu() {
         onClick={handleClick}
         
       >
-       Menu
+        <BloodtypeIcon />
       </Button>
       <Menu
         id="demo-positioned-menu"

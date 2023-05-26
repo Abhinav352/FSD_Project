@@ -126,9 +126,8 @@ h2{
 .card{
   margin-top: 20px;
   margin-left: 20px;
-  background-color: rgb(16,35,196);
-  background: linear-gradient(90deg, rgba(16,35,196,1) 0%, rgba(103,122,29,1) 100%);;
-}
+  background: rgb(228,122,160);
+background: linear-gradient(90deg, rgba(228,122,160,1) 100%, rgba(0,0,0,1) 100%, rgba(241,10,57,1) 100%, rgba(222,18,111,1) 100%);}
 .loginBackground{
   /* background-image:url(/src/components/images/background.jpg);
   background-repeat: no-repeat;
