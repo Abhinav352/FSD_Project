@@ -22,18 +22,20 @@ const Home = () => {
     </div>
     <div>
       <Typography >
-    <h1 className='tips'>
-        Tips
-      </h1>
+    <h2 className='tips'>
+        TIPS
+      </h2>
      <div className='tip-1'> Here are some tips to put your mind at ease </div>
-     <div className='tip-2'> during the blood donation process</div>
+     <div className='tip-2'> during the blood donation process :</div>
       </Typography>
 
       <Grid container spacing={5}>
      
       <Paper elevation={15} style={paperStyle} className='homePaper-1'>
 <h2>
-The day before
+&ensp;
+
+  The day before
 </h2>
 <ul>
 <li>Have an iron-rich diet such as beans, spinach or meat, poultry.</li>
@@ -46,6 +48,7 @@ The day before
         </Paper>
         <Paper elevation={15} style={paperStyle} className='homePaper-2'>
 <h2>
+&ensp;
 On the Donation day
 </h2>
 <ul>
@@ -60,6 +63,7 @@ On the Donation day
         </Paper>        
         <Paper elevation={15} style={paperStyle} className='homePaper-3'>
 <h2>
+&ensp;
 After the Donation
 </h2>
 <ul>

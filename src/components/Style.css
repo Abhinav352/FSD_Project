@@ -114,10 +114,10 @@ h2{
   color: white;
 }
 .App{
-        height: 10cm;
+        
         width:10cm;
         left: 40%;
-        top: 30%;
+        
         position: absolute;
         
        
@@ -143,7 +143,8 @@ body{
   background-image: url('/src/components/images/save_blood.png');
  
   background-size: cover;
- 
   
-  
+}
+.pog{
+  text-align:left;
 }

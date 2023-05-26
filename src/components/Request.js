@@ -31,16 +31,24 @@ const {register,handleSubmit}= useForm();
            setresult(result = response.data);
       })
  }
- const paperStyle={padding:20,height:'85vh',width:420,margin:"20p"}
+ const paperStyle={padding:50,height:'85vh',width:420,margin:"120p"}
   return (
     
     <div>
+      
       <Donordash/>
       <Grid className='App'>
           <Paper elevation={15} style={paperStyle} className='col'>
       
      
         <div className='tb'>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+
         <h2 className='lr'>REQUEST FORM</h2>  
         
          
