@@ -103,7 +103,7 @@ const Update = () => {
             </Grid>
             <Button className='button'
               type="submit"
-              fullWidth
+              
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
               color='error'
