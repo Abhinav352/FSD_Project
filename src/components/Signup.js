@@ -51,7 +51,7 @@ const Signup = () => {
        {...register('userEmail')}/><br></br><br></br>
         <TextField  className='textfield' id="oraphyutlined-basic" label="Username" variant="filled" name='userName'
        {...register('userName')}/><br></br><br></br>
-        <TextField   className='textfield'id="outlined-basic" label="Password" variant="filled" name='userPassword'
+        <TextField   className='textfield'id="outlined-basic" label="Password" variant="filled"  type='password' name='userPassword'
        {...register('userPassword')}/><br></br><br></br>
 
         <Button className='tl' onClick={handleSubmit(handleSignup)} variant="contained">Sign Up</Button><br></br>

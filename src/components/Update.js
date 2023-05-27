@@ -11,12 +11,12 @@ const Update = () => {
   const {register, handleSubmit} = useForm()
   const location = useLocation();
   console.log('location',location)
-  const user = location.state.donor
-  console.log(user.userName)
+  const value = location.state.value
+  console.log(value.userName)
   const handleUpdate = (data) => {
-    data = {...data,_id:user._id}
+    data = {...data,_id:value._id}
     console.log(`request data is: ${data._id}`)
-    axios.post('http://localhost:5000/verified/request/update',data).then((res)=>{
+    axios.post('http://localhost:6901/admin/update',data).then((res)=>{
         console.log(res)
         toast.success("Updated user")
     })
@@ -34,72 +34,69 @@ const Update = () => {
               <Grid item xs={12} sm={6}>
                 <TextField
                   autoComplete="given-name"
-                  name="requestName"
+                  name="userName"
                   required
-                  fullWidth
+                 
                   id="Name"
                   label="Name"
                   autoFocus
-                  {...register("requestName")}
-                  defaultValue={user.requestName}
+                  {...register("userName")}
+                  defaultValue={value.userName}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
                   required
-                  fullWidth
+                 
                   id="Age"
                   label="Age"
-                  name="requestAge"
-                  autoComplete="family-name"
-                  {...register("requestAge")}
-                  defaultValue={user.requestAge}
+                  name="userAge"
+                  
+                  {...register("userAge")}
+                  defaultValue={value.userAge}
 
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
               <TextField
-                    select
-                    fullWidth
-                    id='email'
+                    
+                   
+                    
                     label='Email'
-                    name='requestEmail'
-                    {...register('requestEmail')}
-                    defaultValue={user.requestEmail}
+                    name='userEmail'
+                    {...register('userEmail')}
+                    defaultValue={value.userEmail}
                   >
-                    <MenuItem value='male'>Male</MenuItem>
-                    <MenuItem value='female'>Female</MenuItem>
-                    <MenuItem value='other'>Other</MenuItem>
                   </TextField>
                 </Grid>
                    <Grid item xs={12} sm={6}>
                 <TextField
-                  fullWidth
+                  
                   id="phone"
                   label="Phone"
-                  name="requestPhone"
-                  {...register("requestPhone")}
-                  defaultValue={user.requestPhone}
+                  name="userMobile"
+                  {...register("userMobile")}
+                  defaultValue={value.userMobile}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
               <TextField
-                  fullWidth
+                
                   id="Blood"
                   label="Blood Group"
-                  name="requestBlood"
-                  {...register("requestBlood")}
-                  defaultValue={user.requestBlood}
+                  name="userBloodGroup"
+                  {...register("userBloodGroup")}
+                  defaultValue={value.userBloodGroup}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
               <TextField
-                  fullWidth
+                  
                   id="ailment"
                   label="Ailment"
-                  name="requestAilment"
-                  {...register("requestAilment")}
-                  defaultValue={user.requestAilment}
+                  name="userAilments"
+                  {...register("userAilments")}
+                  defaultValue={value.userAilments}
                 />
               </Grid>
       

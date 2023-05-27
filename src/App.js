@@ -24,7 +24,7 @@ function App() {
       <Route path='/adashboard'element={<Adashboard/>}></Route>
       <Route path='/requestform'element={<Request/>}></Route>
       <Route path='/logout'element={<Logoutbar />}></Route>
-      <Route path='/Update'element={<Update />}></Route>
+      <Route path='/update'element={<Update />}></Route>
       <Route path='/pending'element={<Pending />}></Route>
       <Route path='/'element={<Home/>}></Route>
       

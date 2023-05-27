@@ -16,6 +16,7 @@ import Home from './Home';
 import Donordash from './Donordash';
 import axios from "axios";
 import Adash from './Adash';
+import { useNavigate } from 'react-router-dom';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -40,6 +41,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 const Adashboard = () => {
 var [donor,setdonor] = useState([]);
+
+const navigate = useNavigate()
 useEffect(()=>{
     axios.get('http://localhost:6901/user/view').then((response)=>{
         console.log(response)
@@ -78,7 +81,11 @@ return (
           <StyledTableCell align="centre" className='bord'>{value.userEmail}</StyledTableCell>
           <StyledTableCell align="centre" className='bord'>{value.userMobile}</StyledTableCell>
           <StyledTableCell align="centre" className='bord'>{value.userBloodGroup}</StyledTableCell>
-          <StyledTableCell align="centre" className='bord'><Button variant='contained'><Link to={"/update"}  style={{textDecoration: 'none'}}>Update</Link></Button></StyledTableCell>
+          <StyledTableCell align="centre" className='bord'><Button variant='contained'  onClick={()=>{navigate('/update',{
+                                state: {
+                                    value
+                                }
+                            })}}>Update</Button></StyledTableCell>
           <StyledTableCell align="centre" className='bord'><Button variant='contained' onClick={()=>{deletDonor(value._id)}}>Delete</Button></StyledTableCell>
           
        
